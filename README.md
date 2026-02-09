@@ -7,6 +7,7 @@ GBDA302 Week 4 Example 5: Blob Platformer (JSON + Classes)
 ## Authors
 
 Karen Cochrane and David Han
+Edited by: Olivia Yip
 
 ---
 
@@ -39,4 +40,5 @@ N/A
 
 The code was written by Dr. Karen Cochrane and David Han but they used GenAI to write the comments.
 
+This code was written using GenAI.
 ---
