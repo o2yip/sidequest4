@@ -40,17 +40,23 @@ function setup() {
 }
 
 function draw() {
-  // 1) Draw the world (background + platforms)
+  // 1) Draw the world
   world.drawWorld();
 
-  // 2) Update and draw the player on top of the world
+  // 2) Update and draw the player
   player.update(world.platforms);
   player.draw(world.theme.blob);
 
-  // 3) HUD
+  // 3) Auto-load next level if player reaches the end of the map
+  if (player.x + player.r >= world.inferWidth()) {
+    const next = (levelIndex + 1) % data.levels.length;
+    loadLevel(next);
+  }
+
+  // 4) HUD
   fill(0);
   text(world.name, 10, 18);
-  text("Move: A/D or ←/→ • Jump: Space/W/↑ • Next: N", 10, 36);
+  text("Move: A/D or ←/→ • Jump: Space/W/↑", 10, 36);
 }
 
 function keyPressed() {
